@@ -89,3 +89,11 @@
 + 	welcome 페이지 확인 : index.jsp 작성 후 프로젝트 우클릭 --→ Run as --→ Run on Server
 	+ 실행되는 url 과 기본 웹페이지 확인하기
 
+### 데이터베이스 설계
+기능 : 커뮤니티 게시판
+
+#### 1. 테이블 생성
++ 메인글 : community 테이블
++ 댓글 : communityComments 테이블 
+
+#### 2. 주요 sql 테스트
