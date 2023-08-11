@@ -89,11 +89,26 @@
 + 	welcome 페이지 확인 : index.jsp 작성 후 프로젝트 우클릭 --→ Run as --→ Run on Server
 	+ 실행되는 url 과 기본 웹페이지 확인하기
 
+<hr>
+
 ### 데이터베이스 설계
 기능 : 커뮤니티 게시판
 
-#### 1. 테이블 생성
+##### 1. 테이블 생성
 + 메인글 : community 테이블
 + 댓글 : communityComments 테이블 
 
-#### 2. 주요 sql 테스트
+##### 2. 주요 sql 테스트
+<hr>
+
+### mybatis 프레임웍 
+
+##### 1. mapper xml : 실행할 sql 정의
+
+##### 2. configuration xml : DBCP datasource , mapper xml 설정
+
+##### 3. mybatis SqlSession 객체 생성 메소드 정의
+
+<hr>
+
+※ dao와 dto 클래스 및 jsp 소스 구현 등 이후 순서는 github 프로젝트 참고하세요.
