@@ -1,6 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
- <!== groupId, artifactId 는 프로젝트 이름과 관련된 것이니 복붙 잘못하지 않도록 주의 하세요. -->	
+ <!-- groupId, artifactId 는 프로젝트 이름과 관련된 것이니 복붙 잘못하지 않도록 주의 하세요. -->	
   <groupId>jspBoard</groupId>
   <artifactId>jspBoard</artifactId>
   <version>0.0.1-SNAPSHOT</version>
