@@ -20,7 +20,7 @@
 
 #### pom.xml  디펜던시 추가하기
 + pom.xml 의 오류
-	+ run as 에서 maven install --→ 프로젝트 우클릭 -> maven 에서 update project
+	+ run as 에서 maven clean --→ 프로젝트 우클릭 -> maven 에서 update project
 	
 <code>
 
