@@ -47,7 +47,7 @@
 			</li>
 		</ul>
 	<div style="text-align: center;margin-bottom: 10px;">
-	<c:if test="">  <!-- session 에 저장된 user애트리뷰트의 id와 작성자가 같은면 보이기 -->
+	<c:if test="${user.id==vo.writer }">  <!-- session 에 저장된 user애트리뷰트의 id와 작성자가 같은면 보이기 -->
 		<a class="button" href="javascript:execute(1)">수정</a>  <!-- 자바스크립트 함수:인자값 1은 수정 -->
 		<a class="button" href="javascript:execute(2)">삭제</a>  <!-- 자바스크립트 함수:인자값 2는 삭제  -->
 	</c:if>
