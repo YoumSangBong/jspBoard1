@@ -17,6 +17,8 @@
 								(SELECT * FROM community  ORDER BY idx DESC) f)
 		WHERE r BETWEEN #{start} AND #{end}
  	</select>
+ 	
+ 	
  	<select id="count" resultType="int">
  		SELECT count(*) FROM community
  	</select>
@@ -55,7 +57,18 @@
  			idx=#{idx}
  	</delete>
  	
- 	 	
+ 	<insert id="insert" parameterType="org.iclass.dto.Community">
+ 		INSERT INTO 
+ 			community (idx,writer,title,content)
+		VALUES 
+			(community_idx_seq.nextval,#{writer},#{title},#{content})
+		<!-- 참고: insert 후에 community_idx_seq 시퀀스 값을 가져와서 idx 프로퍼티에 저장하는 태그 -->	 
+		<selectKey keyProperty="idx" resultType="long" order="AFTER">
+			<!-- community_idx_seq 시퀀스값 가져오는 sql -->
+			select community_idx_seq.currval
+			from dual
+		</selectKey>	
+ 	</insert>
  </mapper>
  
  

@@ -71,5 +71,16 @@ public class CommunityDao {
 		return result;
 	}
 	
+	public long insert(Community vo) {
+		SqlSession mapper = SqlSessionBean.getSession();
+		mapper.insert("community.insert",vo);
+		mapper.commit();
+		mapper.close();
+
+		//매퍼xml에서 selectKey 로 시퀀스 값을 vo객체 idx 프로퍼티에 저장시켰습니다.
+		return vo.getIdx();			
+	}
+	
+	
 	
 }
