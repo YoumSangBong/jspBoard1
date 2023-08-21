@@ -23,7 +23,8 @@
  <table>
  	<tr><th>제목</th>
  		<td>
- 			<c:choose>  <!-- 수정된 글은 제목 앞에 `[수정]` 문자열을 넣어줍니다.  -->
+ 		<!-- 수정된 글은 제목 앞에 `[수정]` 문자열을 넣어줍니다.  -->
+ 			<c:choose>  
  				<c:when  test="${fn:contains(vo.title,'[수정]') }">  <!-- title 에 `[수정]` 이 있으면 참 -->
  					<input type="text" name="title" size="50" value="${vo.title }" readonly>	
  				</c:when>

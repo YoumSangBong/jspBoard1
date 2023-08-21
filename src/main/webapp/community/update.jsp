@@ -22,14 +22,13 @@
 	}
 
 	CommunityDao dao = CommunityDao.getInstance();
-	dao.setReadCount(idx); //조희수 증가
 	Community vo = dao.selectByIdx(idx); //idx 글 조회하기
 
 	//(1)
 	request.setAttribute("vo", vo);
 	//(2)
 	request.setAttribute("page", pageNo);
-	pageContext.forward("readView.jsp"); //화면에 애트리뷰트와 함께 요청 전달.
+	pageContext.forward("updateView.jsp"); //화면에 애트리뷰트와 함께 요청 전달.
 	%>
 </body>
 </html>
