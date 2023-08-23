@@ -10,7 +10,7 @@
 </head>
 <body>
 <%
-	request.setCharacterEncoding("UTF-8");
+//	request.setCharacterEncoding("UTF-8");		//filter가 실행함.
 	String ip= request.getRemoteAddr();   //클라이언트 ip 가져오기
 	long idx = Long.parseLong(request.getParameter("idx"));
 	String title = request.getParameter("title");
