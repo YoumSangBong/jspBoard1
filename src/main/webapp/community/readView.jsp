@@ -47,11 +47,17 @@
 			</li>
 		</ul>
 	<div style="text-align: center;margin-bottom: 10px;">
-	<c:if test="${user.id == vo.writer }">  <!-- session 에 저장된 user애트리뷰트의 id와 작성자가 같은면 보이기 -->
-		<a class="button" href="javascript:execute(1)">수정</a>  <!-- 자바스크립트 함수:인자값 1은 수정 -->
-		<a class="button" href="javascript:execute(2)">삭제</a>  <!-- 자바스크립트 함수:인자값 2는 삭제  -->
-	</c:if>
-		<a class="button" href="list.jsp?page=${page }">목록</a>   <!-- 현재페이지 번호 전달 - 순서3) -->
+	<form action="" method="post">   <!-- action 은 자바스크립트에서 정합니다. -->
+		<c:if test="${user.id == vo.writer }">  <!-- session 에 저장된 user애트리뷰트의 id와 작성자가 같은면 보이기 -->
+			<input type="hidden" name="idx" value="${vo.idx}">
+			<input type="hidden" name="page" value="${page}">
+			<!-- <a class="button" href="javascript:execute(1)">수정</a> -->  <!-- GET 요청 자바스크립트 함수:인자값 1은 수정 -->
+			<!-- <a class="button" href="javascript:execute(2)">삭제</a>  --> <!-- GET 요청 자바스크립트 함수:인자값 2는 삭제  -->
+			<a class="button" href="javascript:formexecute(1)">수정</a>  <!-- POST요청 자바스크립트 함수:인자값 1은 수정 -->
+			<a class="button" href="javascript:formexecute(2)">삭제</a>  <!-- POST요청 자바스크립트 함수:인자값 2는 삭제  -->
+		</c:if>
+			<a class="button" href="list.jsp?page=${page }">목록</a>   <!-- 현재페이지 번호 전달 - 순서3) -->
+	</form>
 	</div>
 	<script type="text/javascript">
 		function execute(f){
@@ -67,6 +73,25 @@
 				//설명 작성 : 
 				url = (f===1)? 'update.jsp?idx='+${vo.idx} :(f===2)? 'delete.jsp?idx='+${vo.idx}:'#';
 				location.href=url+'&page='+${page};  /* 현재페이지 번호 전달 - 순서3) */
+			}else{
+				alert('취소합니다.')
+			}	
+		}
+		/*  POST 요청을 위해 변경한 함수 : 가급적 url에 많은 정보를 노출하지 않으려면 post 방식으로 합니다. */
+		function formexecute(f){
+			let url
+			let message
+			if(f===1){			//아래 url 변수와 같이 조건삼항연산자로 변경가능
+				message='글 수정하시겠습니까?'
+			}else if(f===2){
+				message='글 삭제하시겠습니까?'
+			}
+			const yn = confirm(message)
+			if(yn) {
+				//설명 작성 : 
+				url = (f===1)? 'update.jsp' :(f===2)? 'delete.jsp':'#';
+				document.forms[0].action=url
+				document.forms[0].submit()
 			}else{
 				alert('취소합니다.')
 			}	
@@ -137,7 +162,7 @@
 </main>	
 <script type="text/javascript">
 	function executeCmt(fval,cidx) {	/* 첫번째는 등록 또는 삭제 기능, 두번째는 삭제할 댓글 idx */
-		const frm = document.forms[0]
+		const frm = document.forms[1]
 		if(fval===1){		//댓글 등록.  '1'==1 (참)  '1'===1 (거짓. 타입체크)
 			if(frm.content.value==''){
 				alert('글 내용은 필수 입력입니다.')
