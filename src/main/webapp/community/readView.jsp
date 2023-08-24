@@ -147,6 +147,14 @@
 				frm.f.value = fval
 				frm.submit()		//댓글 저장
 			}
+		}else if(fval===2){
+			const yn = confirm('댓글 삭제 하시겠습니까?')
+			if(yn) {
+				frm.f.value = fval
+				frm.idx.value = cidx
+				frm.submit()
+			}
+			
 		}
 	}
 
