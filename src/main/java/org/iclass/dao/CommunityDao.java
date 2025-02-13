@@ -74,10 +74,11 @@ public class CommunityDao {
 	public long insert(Community vo) {
 		SqlSession mapper = SqlSessionBean.getSession();
 		mapper.insert("community.insert",vo);
+//	insert 메소드 실행 후 파라미터로 전달한 vo 객체의 idx 프로퍼티값에 시퀀스.nextval 저장 (SelectKey)
 		mapper.commit();
 		mapper.close();
 
-		//매퍼xml에서 selectKey 로 시퀀스 값을 vo객체 idx 프로퍼티에 저장시켰습니다.
+//vo 객체에 저장된 idx 값을 리턴합니다.
 		return vo.getIdx();			
 	}
 	

@@ -1,4 +1,4 @@
--- 메인글 테이블
+--2. 메인글 테이블
 create table community(
   idx number(10) NOT NULL,
   writer varchar2(50) NOT NULL,     --작성자(로그인계정 정보 등)
@@ -15,25 +15,26 @@ create SEQUENCE community_idx_seq;
 
 -- 데이터 샘플 추가
 INSERT INTO community (idx,writer,title,content)
-VALUES (community_idx_seq.nextval, '김모모','알립니다.','오늘 모임 변경안내입니다.');
+VALUES (community_idx_seq.nextval, 'mina012','알립니다.','오늘 모임 변경안내입니다.');
 INSERT INTO community (idx,writer,title,content)
-VALUES (community_idx_seq.nextval, '최사나','공지','공지공지');
+VALUES (community_idx_seq.nextval, 'wonder','공지','공지공지');
 INSERT INTO community (idx,writer,title,content)
-VALUES (community_idx_seq.nextval, '박세리','하이','하이하이!!');
+VALUES (community_idx_seq.nextval, 'twice','하이','하이하이!!');
 INSERT INTO community (idx,writer,title,content)
-VALUES (community_idx_seq.nextval, '김땡땡','이벤트','이벤트 안내입니다.');
+VALUES (community_idx_seq.nextval, 'hongGD','이벤트','이벤트 안내입니다.');
 INSERT INTO community (idx,writer,title,content)
-VALUES (community_idx_seq.nextval, '강감찬','재공지','재공지재공지');
+VALUES (community_idx_seq.nextval, 'twice','재공지','재공지재공지');
 INSERT INTO community (idx,writer,title,content)
-VALUES (community_idx_seq.nextval, '이사나','정회원 공지','정회원 안내입니다.');
+VALUES (community_idx_seq.nextval, 'hongGD','정회원 공지','정회원 안내입니다.');
 INSERT INTO community (idx,writer,title,content)
-VALUES (community_idx_seq.nextval, '이사나','정회원 공55지','정회원 안내입니다.');
+VALUES (community_idx_seq.nextval, 'twice','정회원 공55지','정회원 안내입니다.');
 INSERT INTO community (idx,writer,title,content)
-VALUES (community_idx_seq.nextval, '이사나','정회원 공66지','정회원 안내입니다.');
+VALUES (community_idx_seq.nextval, 'wonder','정회원 공66지','정회원 안내입니다.');
 INSERT INTO community (idx,writer,title,content)
-VALUES (community_idx_seq.nextval, '이사나','정회원 공77지','정회원 안내입니다.');
+VALUES (community_idx_seq.nextval, 'wonder','정회원 공77지','정회원 안내입니다.');
 INSERT INTO community (idx,writer,title,content)
-VALUES (community_idx_seq.nextval, '이사나','정회원 공88지','정회원 안내입니다.');
+VALUES (community_idx_seq.nextval, 'mina012','정회원 공88지','정회원 안내입니다.');
+
 SELECT * FROM COMMUNITY c ;
 
 
@@ -46,8 +47,10 @@ DROP SEQUENCE community_idx_seq;
 -- ////////////주요 sql //////////////////////////////////////////
 -- 전체 글의 갯수 : *count*
 SELECT count(*) FROM community ;	
+
 -- idx 최대값 : *maxOf* -> 이 메소드는 각 매퍼 xml에 모두 작성하기
-SELECT max(idx) FROM community ;	
+SELECT max(idx) FROM community ;
+
 -- 메인글 idx (3번)의 글 : selectByIdx 로 완료했음.
 SELECT * FROM community f WHERE idx=3;
 

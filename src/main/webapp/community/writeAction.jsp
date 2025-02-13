@@ -23,8 +23,16 @@
             .content(content)
             .ip(ip)
             .build());
+    //idx 확인 위한 
+    pageContext.setAttribute("idx", idx);
+    
 %>
 <script type="text/javascript">
-   alert('글 등록이 완료되었습니다.')
+   alert('${idx} 번 글 등록이 완료되었습니다.')
    location.href='list.jsp'
 </script>
+
+
+
+
+

@@ -127,7 +127,7 @@
 															<!-- 2번째 인자는 댓글 등록에서는 필요없음. 아무값 0 -->
 							</c:if>	
 							<c:if test="${sessionScope.user == null }">		
-								<button type="button" onclick="location.href='../login'">로그인</button>
+								<button type="button" onclick="location.href='../login.jsp'">로그인</button>
 							</c:if>
 					</li>
 				</ul>
