@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,11 +8,15 @@
 <title>Insert title here</title>
 <style>
 	ul#header {
-		list-style: none;
+		list-style: none; 
 		padding: 10px 20px;
 		display: flex;
 		justify-content: center;
 		margin: 0;
+	}
+	ul#nav {
+		list-style: none;
+		display: flex;
 	}
 	nav {
 		padding : 5px;
@@ -19,11 +24,18 @@
 		display: flex;
 		justify-content: flex-end;
 		background-color: orange;
-		color: white;
 	}
 	
 	ul#header > li {
 		padding: 20px;
+	}
+	
+	ul#nav > li {   /* 자식 li */
+		padding: 0px 10px;
+	} 
+	ul#nav a {   /* 자손 a  */
+		color: brown;
+		font-weight: 600;
 	}
 	a {
 		text-decoration: none;
@@ -43,16 +55,16 @@
 		<li><a href="#">고객센터</a></li>
 	</ul>
 	<nav>
-			<!-- "user" 라는 이름의 애트리뷰트 가져오기 -->
+		<ul id="nav">
 			<c:if test="${user !=null }">
-				<h4><c:out value="${user.name }"/> 님 환영합니다.</h4>
-				<p><a href="logout.jsp">로그아웃</a></p>
+				<li><c:out value="${user.name }"/> 님 환영합니다.</li>
+				<li><a href="<%= request.getContextPath() %>/logout.jsp">로그아웃</a></li>
 			</c:if>
 			<c:if test="${user ==null }">
-				<p><a href="login.jsp">로그인</a></p>
-				<p><a href="member/join.jsp">회원가입</a></p>
+				<li><a href="<%= request.getContextPath() %>/login.jsp">로그인</a></li>
+				<li><a href="<%= request.getContextPath() %>/member/join.jsp">회원가입</a></li>
 			</c:if>
-				<p><a href="community/list.jsp">커뮤니티</a></p>
+		</ul>
 	</nav>
    </header>	
 </body>
