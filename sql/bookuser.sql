@@ -6,7 +6,7 @@ CREATE TABLE bookuser (
 	age NUMBER(3,0), 
 	reg_date DATE default sysdate, 
 	password VARCHAR2(64)
-   );
+);
   
 INSERT INTO BOOKUSER VALUES ('twice','박모모','momo@daum.net',39,TIMESTAMP'2022-02-05 00:00:00.0','1234');
 INSERT INTO BOOKUSER VALUES ('mina012','김미나','kimm@gmail.com',20,TIMESTAMP'2023-02-07 15:03:06.0','1234');
