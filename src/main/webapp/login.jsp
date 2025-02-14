@@ -24,9 +24,9 @@
 </head>
 <body>
 <%
-String temp=request.getParameter("back");
-if(temp!=null && temp.equals("w")) 
-	session .setAttribute("back","community/write.jsp");
+	String temp=request.getParameter("back");
+	if(temp!=null && temp.equals("w")) 
+		session .setAttribute("back","community/write.jsp");
 %>
 <div class="container mt-3 width30">
   <h2>회원 로그인</h2>

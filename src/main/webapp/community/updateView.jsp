@@ -11,6 +11,7 @@
 		href="${pageContext.request.contextPath }/css/community.css?v=3"> 
 </head>
 <body>
+			<%@ include file="../header.jsp" %>
 			<main id="write">
 			<h3>북챗 :: 커뮤니티</h3>
 			<p>오늘 무슨 책을 읽으셨나요? </p>

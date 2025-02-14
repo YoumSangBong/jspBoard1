@@ -10,6 +10,7 @@
 <title>우리 북카페</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/read.css?v=3">
 <body>
+	<%@ include file="../header.jsp" %>
 	<main id="read">
 	<h3>북챗 :: 커뮤니티</h3>
 	<p>오늘 무슨 책을 읽으셨나요? </p>
