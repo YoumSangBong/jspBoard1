@@ -26,7 +26,10 @@
  	<!-- 작성자는 문제점을 발견하기 위한 추가 사항이고 나중에는 삭제합니다. -->
  	<tr><th>작성자</th>
  		<td>
- 			<input type="text" name="writer" size="50" value="${user.id }">	
+ 		<!-- 애트리뷰트값 user에서 id 만 가져오기.  readonly 또는 disable 설정해서 수정 불가로
+ 		     해야함.
+ 		 -->
+ 			<input type="text" name="writer" size="50" value="${user.id }" readonly>	
  		</td>
  	</tr>
  	<tr><th>내용</th>  
@@ -38,7 +41,9 @@
  	<td colspan="2" align="center">
 	 	<button type="submit">저장</button>
 	 	<button type="reset">다시쓰기</button>
-	 	<button type="button" onclick="location.href='list.jsp'">목록</button>  
+	 	<button type="button" 
+	 	  onclick="location.href='list.jsp?page=<%= request.getParameter("page")  %>'">
+	 	 목록</button>  
  	</td>
  	</tr>
  </table>

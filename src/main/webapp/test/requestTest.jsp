@@ -9,8 +9,13 @@
 <body>
 <!-- 
 request.getRequestURL() : 실행 후 브라우저의 URL 주소
-request.getRequestURI() : 위의 URL 중에서 경로(path) 이후의 값	
+request.getRequestURI() : 위의 URL 중에서 경로(path) 이후의 문자열 값	
+		ㄴ /jspBoard/test/requestTest.jsp
 request.getContextPath() : /jspBoard (첫번째 path이고 프로젝트 이름)
+		ㄴ /jspBoard
+request.getServletPath() : getContextPath 이후의 문자열 값
+		ㄴ /test/requestTest.jsp
+
 request.getRemoteAddr() : 클라이언트의 ip 주소
 		ㄴ ipv6(8자리(: 기준) 128비트) : 0:0:0:0:0:0:0:1 (ipv4 127.0.0.1) localhost 주소
 request.getRemoteHost() : 클라이언트 컴퓨터 이름. 따로 설정하지 않으면 ip 주소
@@ -20,6 +25,7 @@ request.getRemoteHost() : 클라이언트 컴퓨터 이름. 따로 설정하지 
 		<li><%= request.getRequestURL() %></li>
 		<li><%= request.getRequestURI() %></li>
 		<li><%= request.getContextPath() %></li>
+		<li><%= request.getServletPath() %></li>
 		<!-- 서버 코드이므로 Remote 는 클라이언트  -->
 		<li><%= request.getRemoteAddr() %></li>
 		<li><%= request.getRemoteHost() %></li>

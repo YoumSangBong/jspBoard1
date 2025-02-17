@@ -4,7 +4,7 @@ CREATE TABLE communityComments (
 	mref number(10) NOT NULL,   -- community 테이블의 idx	
 	writer varchar2(50) NOT NULL,	-- 작성자
 	content varchar2(1000) NOT NULL,  -- 댓글 내용
-	createdAt DATE default sysdate ,  -- 작성날짜와시간 기본값
+	createdAt Date default sysdate ,  -- 작성날짜와시간 기본값
 	ip varchar2(15) default '127.0.0.1',  -- 작성자 ip
 	heart number(3) default '0',	-- 좋아요 갯수
 	primary  key (idx)
